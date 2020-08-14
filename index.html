@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Travel {background-color: red;}
+#Marraige {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+</style>
+</head>
+<body>
+
+<div class="h1" height: 1em;
+width:100%;>
+<h1>Budget Spending Analysis</h1>
+</div>
+
+<div class="tracker_amt">
+  <h3 style="margin-bottom: 0px;">Hello LoveOnn</h3>
+<table class="tracksave" style="float:right">
+  <th><h4 class="h4">Overall Budget</h4></th>
+  <tr>
+    <td><h3>₹0,00,000.00</h3></td>
+  </tr>
+</table>
+</div>
+
+<button class="tablink" onclick="openPage('Travel', this, 'red')" id="defaultOpen">Travel</button>
+<button class="tablink" onclick="openPage('Marraige', this, 'green')">Marraige</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+
+<div id="Travel" class="tabcontent" >
+  <h3>Travel</h3>
+  <p>Home is where the heart is..</p>
+
+  <!-- table for the budgets  -->
+<table>
+<tr>
+<td>
+<table class="t1">
+
+  <tr>
+    <th>Items</th>
+    <th>Amount</th>
+    <th>Done</th>
+  </tr>
+  <tr>
+    <td>Bottle</td>
+    <td>500</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Tent</td>
+    <td>1200</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Camping Kit</td>
+    <td>6000</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Camera</td>
+    <td>70,000</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Bag</td>
+    <td>2500</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Shoes</td>
+    <td>4000</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>clothes</td>
+    <td>4700</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Misc</td>
+    <td>3000</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <th>Total</th>
+    <th>91,900</th>
+    <th></th>
+  </tr>
+</table>
+</td>
+<!-- stats table-->
+<td>
+<table class="t2"  style="float: right;">
+  <tr>
+    <td>
+      <h4>Savings to Go</h4>
+      <h4>₹11,900.00</h4>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>Savings Achived</h4>
+      <h4>₹80,000.00</h4>
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="Marraige" class="tabcontent">
+  <h3>Marraige</h3>
+  <p>Some News this fine day!</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
